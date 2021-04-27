@@ -41,7 +41,7 @@ class EditCallmapRecordContainer extends Component<{}, IOwnState> {
 
         axios.get(`${CALLMAP_API_OPERATION_BY_ID_URL}/${callmapRecordId}`)
             .then((response) => {
-                const data = response.data[0];
+                const data = response.data;
                 const { firstName, lastName, phoneNumber, callNote, priority, additionalNotes } = data;
 
                 this.setState({
@@ -60,13 +60,20 @@ class EditCallmapRecordContainer extends Component<{}, IOwnState> {
 
     onTextFieldChange = (event: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = (event as any).currentTarget;
-        this.setState((prevState) => ({
-            ...prevState,
-            newCallmapRecord: {
-                ...prevState.newCallmapRecord,
+        if (name === 'additionalNote') {
+            this.setState((prevState) => ({
+                ...prevState,
                 [name]: value
-            }
-        }));
+            }));
+        } else {
+            this.setState((prevState) => ({
+                ...prevState,
+                newCallmapRecord: {
+                    ...prevState.newCallmapRecord,
+                    [name]: value
+                }
+            }));
+        }
     }
 
     onSelectFieldChange = (event: any) => {

@@ -40,12 +40,11 @@ class ViewCallmapRecordContainer extends Component<{}, IOwnState> {
 
         axios.get(`${CALLMAP_API_OPERATION_BY_ID_URL}/${callmapRecordId}`)
             .then((response: any) => {
-                console.log('response', response);
                 this.setState({
                     callmapRecord: response.data[0],
                     mappedCallmapRecord: this.transformCallmapRecordResponse(response.data)
                 });
-            }).catch((err) => { console.log(err) });
+            }).catch((_) => { });
     }
 
     transformCallmapRecordResponse = (callmapRecord: ICallmapRecordResponse): ICallmapRecord => {
@@ -59,7 +58,6 @@ class ViewCallmapRecordContainer extends Component<{}, IOwnState> {
             additionalNotes: callmapRecord.additionalNotes
         };
 
-        console.log('mappedRecord', mappedRecord);
         return mappedRecord;
     }
 
