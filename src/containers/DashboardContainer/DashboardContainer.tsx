@@ -49,6 +49,8 @@ class DashboardContainer extends Component<{}, IOwnState> {
                 phoneNumber: record.phoneNumber,
                 callNote: record.callNote,
                 priority: record.priority,
+                timestamp: new Date(record.timestamp).toLocaleString(),
+                version: new Date(record.version).toLocaleString(),
                 additionalNotes: record.additionalNotes
             };
             output.push(mappedRecord);
@@ -66,8 +68,11 @@ class DashboardContainer extends Component<{}, IOwnState> {
 
     handlePriorityFilterChange = (event: any) => {
         const { value } = event.target;
-        console.log('priority is', value);
         this.setState({ priorityFilter: value });
+    }
+
+    handlePriorityFilterClear = (event: any) => {
+        this.setState({ priorityFilter: '' });
     }
 
     render = (): JSX.Element => {
@@ -76,6 +81,7 @@ class DashboardContainer extends Component<{}, IOwnState> {
                 <FilterPanel
                     priorityFilter={this.state.priorityFilter}
                     handlePriorityFilterChange={this.handlePriorityFilterChange}
+                    handlePriorityFilterClear={this.handlePriorityFilterClear}
                 />
                 <Dashboard callmapRecords={this.filterCallmapRecordsByPriority(this.state.formattedCallmapRecords)} />
             </BaseLayout>

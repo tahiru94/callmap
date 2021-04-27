@@ -5,6 +5,8 @@ export interface ICallmapRecord {
     phoneNumber: string;
     callNote: string;
     priority: string;
+    version?: string;
+    timestamp?: string;
     additionalNotes?: string[];
 }
 
