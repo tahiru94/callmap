@@ -6,9 +6,9 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-import ListView from '../ListView/ListView';
-import { ICallmapRecord } from '../../models/callmap-record';
-import { formatDate, formatPhoneNumber } from '../../utils';
+import ListView from 'components/ListView';
+import { ICallmapRecord } from 'models/callmap-record';
+import { formatDate, formatPhoneNumber } from 'utils';
 
 interface IOwnProps {
     callmapRecord: ICallmapRecord;

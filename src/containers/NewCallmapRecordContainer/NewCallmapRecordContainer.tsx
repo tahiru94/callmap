@@ -1,10 +1,10 @@
 import { ChangeEventHandler, Component } from 'react';
 import axios from 'axios';
 
-import BaseLayout from '../../components/BaseLayout';
-import NewCallmapRecord from '../../components/NewCallmapRecord';
-import { ICallmapRecord } from '../../models/callmap-record';
-import { CALLMAP_API_BASE_URL } from '../../constants/constants';
+import BaseLayout from 'components/BaseLayout';
+import NewCallmapRecord from 'components/NewCallmapRecord';
+import { ICallmapRecord } from 'models/callmap-record';
+import { CALLMAP_API_BASE_URL } from 'constants/constants';
 
 interface IOwnState {
     newCallmapRecord: ICallmapRecord;

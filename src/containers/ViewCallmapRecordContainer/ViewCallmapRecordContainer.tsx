@@ -1,10 +1,10 @@
 import { Component } from 'react';
 import axios from 'axios';
 
-import BaseLayout from '../../components/BaseLayout';
-import ViewCallmapRecord from '../../components/ViewCallmapRecord';
-import { CALLMAP_API_OPERATION_BY_ID_URL } from '../../constants/constants';
-import { ICallmapRecordResponse, ICallmapRecord } from '../../models/callmap-record';
+import BaseLayout from 'components/BaseLayout';
+import ViewCallmapRecord from 'components/ViewCallmapRecord';
+import { CALLMAP_API_OPERATION_BY_ID_URL } from 'constants/constants';
+import { ICallmapRecordResponse, ICallmapRecord } from 'models/callmap-record';
 
 interface IOwnState {
     callmapRecord: ICallmapRecordResponse;

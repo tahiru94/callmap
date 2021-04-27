@@ -1,11 +1,11 @@
-import { IRoute } from '../models/route';
+import { IRoute } from 'models/route';
 import Home from '@material-ui/icons/Home';
 import Add from '@material-ui/icons/Add';
 
-import DashboardContainer from '../containers/DashboardContainer';
-import NewCallmapRecordContainer from '../containers/NewCallmapRecordContainer';
-import EditCallmapRecordContainer from '../containers/EditCallmapRecordContainer/';
-import ViewCallmapRecordContainer from '../containers/ViewCallmapRecordContainer';
+import DashboardContainer from 'containers/DashboardContainer';
+import NewCallmapRecordContainer from 'containers/NewCallmapRecordContainer';
+import EditCallmapRecordContainer from 'containers/EditCallmapRecordContainer/';
+import ViewCallmapRecordContainer from 'containers/ViewCallmapRecordContainer';
 
 const AppRoutes: IRoute[] = [
     {

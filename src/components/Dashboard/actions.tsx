@@ -3,7 +3,7 @@ import Edit from '@material-ui/icons/Edit';
 import Delete from '@material-ui/icons/Delete';
 import Search from '@material-ui/icons/Search';
 
-import { CALLMAP_API_OPERATION_BY_ID_URL } from '../../constants/constants';
+import { CALLMAP_API_OPERATION_BY_ID_URL } from 'constants/constants';
 
 const actionRowWrapperStyles = {
     display: 'flex',

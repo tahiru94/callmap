@@ -1,12 +1,12 @@
 import { Component } from 'react';
 import axios from 'axios';
 
-import BaseLayout from '../../components/BaseLayout';
-import Dashboard from '../../components/Dashboard';
-import FilterPanel from '../../components/FilterPanel';
-import { ICallmapRecordResponse, ICallmapRecord } from '../../models/callmap-record';
-import { CALLMAP_API_GET_LATEST_URL } from '../../constants/constants';
-import { formatDate, formatPhoneNumber } from '../../utils';
+import BaseLayout from 'components/BaseLayout';
+import Dashboard from 'components/Dashboard';
+import FilterPanel from 'components/FilterPanel';
+import { ICallmapRecordResponse, ICallmapRecord } from 'models/callmap-record';
+import { CALLMAP_API_GET_LATEST_URL } from 'constants/constants';
+import { formatDate, formatPhoneNumber } from 'utils';
 
 interface IOwnState {
     callmapRecords: ICallmapRecordResponse[];

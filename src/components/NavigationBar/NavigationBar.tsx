@@ -11,8 +11,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
 
-import Routes from '../../routes/routes';
-import { IRoute } from '../../models/route';
+import Routes from 'routes/routes';
+import { IRoute } from 'models/route';
 
 const useStyles = makeStyles((theme: Theme) => {
     return createStyles({

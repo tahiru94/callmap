@@ -1,9 +1,9 @@
 import { FC, Fragment } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Routes from '../../routes/routes';
-import NavigationBar from '../NavigationBar';
-import { IRoute } from '../../models/route';
+import Routes from 'routes/routes';
+import NavigationBar from 'components/NavigationBar';
+import { IRoute } from 'models/route';
 
 const AppRouter: FC = (): JSX.Element => {
     return (

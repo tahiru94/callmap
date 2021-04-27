@@ -1,4 +1,4 @@
-import { IColumn } from '../../models/columns';
+import { IColumn } from 'models/columns';
 import actionRowFormatter from './actions';
 
 const columns: IColumn[] = [
