@@ -1,10 +1,10 @@
 import { Component } from 'react';
 import axios from 'axios';
 
-import BaseLayout from '../components/BaseLayout';
-import Dashboard from '../components/Dashboard';
-import { ICallmapRecordResponse, ICallmapRecord } from '../models/callmap-record';
-import { CALLMAP_API_GET_LATEST_URL } from '../constants/constants';
+import BaseLayout from '../../components/BaseLayout';
+import Dashboard from '../../components/Dashboard';
+import { ICallmapRecordResponse, ICallmapRecord } from '../../models/callmap-record';
+import { CALLMAP_API_GET_LATEST_URL } from '../../constants/constants';
 
 interface IOwnState {
     callmapRecords: ICallmapRecordResponse[];
@@ -48,7 +48,6 @@ class DashboardContainer extends Component<{}, IOwnState> {
             };
             output.push(mappedRecord);
         });
-
         return output;
     }
 
