@@ -22,7 +22,6 @@ class DashboardContainer extends Component<{}, IOwnState> {
     }
 
     pollForCallmapRecords = (): void => {
-        console.log('pollForCallmapRecords');
         axios.get(CALLMAP_API_GET_LATEST_URL)
             .then((response: any) => {
                 this.setState({
