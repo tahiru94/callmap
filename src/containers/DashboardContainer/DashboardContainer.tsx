@@ -3,18 +3,23 @@ import axios from 'axios';
 
 import BaseLayout from '../../components/BaseLayout';
 import Dashboard from '../../components/Dashboard';
+import FilterPanel from '../../components/FilterPanel';
 import { ICallmapRecordResponse, ICallmapRecord } from '../../models/callmap-record';
 import { CALLMAP_API_GET_LATEST_URL } from '../../constants/constants';
 
 interface IOwnState {
     callmapRecords: ICallmapRecordResponse[];
+    formattedCallmapRecords: ICallmapRecord[];
     error: any;
+    priorityFilter: string;
 }
 
 class DashboardContainer extends Component<{}, IOwnState> {
     public state: IOwnState = {
         callmapRecords: [],
-        error: undefined
+        formattedCallmapRecords: [],
+        error: undefined,
+        priorityFilter: '',
     };
 
     componentDidMount = (): void => {
@@ -25,15 +30,15 @@ class DashboardContainer extends Component<{}, IOwnState> {
         axios.get(CALLMAP_API_GET_LATEST_URL)
             .then((response: any) => {
                 this.setState({
-                    callmapRecords: response.data
+                    callmapRecords: response.data,
+                    formattedCallmapRecords: this.transformCallmapRecordResponse(response.data),
                 });
             }).catch((err) => {
                 this.setState({ error: err });
             });
     }
 
-    transformCallmapRecordResponse = (): ICallmapRecord[] => {
-        const { callmapRecords } = this.state;
+    transformCallmapRecordResponse = (callmapRecords: ICallmapRecordResponse[]): ICallmapRecord[] => {
         const output: ICallmapRecord[] = [];
 
         callmapRecords.forEach((record: ICallmapRecordResponse) => {
@@ -51,10 +56,28 @@ class DashboardContainer extends Component<{}, IOwnState> {
         return output;
     }
 
+    filterCallmapRecordsByPriority = (callmapRecords: ICallmapRecord[]): ICallmapRecord[] => {
+        if (this.state.priorityFilter === '') {
+            return callmapRecords;
+        }
+
+        return callmapRecords.filter((record: ICallmapRecord) => record.priority === this.state.priorityFilter);
+    }
+
+    handlePriorityFilterChange = (event: any) => {
+        const { value } = event.target;
+        console.log('priority is', value);
+        this.setState({ priorityFilter: value });
+    }
+
     render = (): JSX.Element => {
         return (
             <BaseLayout>
-                <Dashboard callmapRecords={this.state.callmapRecords} />
+                <FilterPanel
+                    priorityFilter={this.state.priorityFilter}
+                    handlePriorityFilterChange={this.handlePriorityFilterChange}
+                />
+                <Dashboard callmapRecords={this.filterCallmapRecordsByPriority(this.state.formattedCallmapRecords)} />
             </BaseLayout>
         );
     }
