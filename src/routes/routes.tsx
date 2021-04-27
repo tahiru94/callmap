@@ -1,10 +1,12 @@
 import { IRoute } from '../models/route';
 
+import DashboardContainer from '../containers/DashboardContainer';
+
 const AppRoutes: IRoute[] = [
     {
         path: '/',
         sidebarName: 'Dashboard',
-        component: () => <div>Home</div>,
+        component: DashboardContainer,
         showInSidebar: true,
     },
     {
