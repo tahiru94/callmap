@@ -40,7 +40,7 @@ const columns: IColumn[] = [
         width: 240
     },
     {
-        field: 'actions',
+        field: 'id',
         headerName: 'Actions',
         width: 150,
         renderCell: ({ value }: any) => {

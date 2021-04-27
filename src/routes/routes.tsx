@@ -4,6 +4,7 @@ import Add from '@material-ui/icons/Add';
 
 import DashboardContainer from '../containers/DashboardContainer';
 import NewCallmapRecordContainer from '../containers/NewCallmapRecordContainer';
+import EditCallmapRecordContainer from '../containers/EditCallmapRecordContainer/';
 
 const AppRoutes: IRoute[] = [
     {
@@ -22,7 +23,7 @@ const AppRoutes: IRoute[] = [
     },
     {
         path: '/edit/:id',
-        component: () => <div>Edit Callmap Record</div>,
+        component: EditCallmapRecordContainer,
         showInSidebar: false,
     },
     {

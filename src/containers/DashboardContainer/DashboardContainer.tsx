@@ -48,7 +48,6 @@ class DashboardContainer extends Component<{}, IOwnState> {
             };
             output.push(mappedRecord);
         });
-
         return output;
     }
 

@@ -64,7 +64,6 @@ class NewCallmapRecordContainer extends Component<{}, IOwnState> {
         axios.post(CALLMAP_API_BASE_URL, {
             ...this.state.newCallmapRecord
         }).then((response: any) => {
-            console.log('response', response);
             this.setState({
                 newCallmapRecord: {
                     firstName: '',

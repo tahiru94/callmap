@@ -95,23 +95,36 @@ class EditCallmapRecordContainer extends Component<{}, IOwnState> {
         });
     }
 
+    generateEditedBody = (): ICallmapRecord => {
+        const { newCallmapRecord, originalCallmapRecord } = this.state;
+        const edited: ICallmapRecord = {
+            firstName: newCallmapRecord.firstName || originalCallmapRecord.firstName,
+            lastName: newCallmapRecord.lastName || originalCallmapRecord.lastName,
+            phoneNumber: newCallmapRecord.phoneNumber || originalCallmapRecord.phoneNumber,
+            callNote: newCallmapRecord.callNote || originalCallmapRecord.callNote,
+            priority: newCallmapRecord.priority || originalCallmapRecord.priority,
+            additionalNotes: newCallmapRecord.additionalNotes || originalCallmapRecord.additionalNotes,
+        }
+
+        return edited;
+    }
+
     handleFormSubmit = (event: any) => {
-        axios.put(`${CALLMAP_API_OPERATION_BY_ID_URL}/${this.state.originalCallmapRecord.id}`, {
-            ...this.state.newCallmapRecord
-        }).then((response: any) => {
-            this.setState({
-                newCallmapRecord: {
-                    firstName: '',
-                    lastName: '',
-                    phoneNumber: '',
-                    priority: 'Low',
-                    callNote: '',
-                    additionalNotes: [],
-                },
-                additionalNote: '',
-                redirect: '/'
-            })
-        }).catch((_) => { });
+        axios.put(`${CALLMAP_API_OPERATION_BY_ID_URL}/${this.state.originalCallmapRecord.id}`, this.generateEditedBody())
+            .then((response: any) => {
+                this.setState({
+                    newCallmapRecord: {
+                        firstName: '',
+                        lastName: '',
+                        phoneNumber: '',
+                        priority: 'Low',
+                        callNote: '',
+                        additionalNotes: [],
+                    },
+                    additionalNote: '',
+                    redirect: '/'
+                })
+            }).catch((_) => { });
     }
 
     handleFormCancel = (event: any) => {

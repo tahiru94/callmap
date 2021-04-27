@@ -46,7 +46,7 @@ const NewCallmapRecord: FC<IOwnProps> = (props): JSX.Element => {
     } else {
         return (
             <Fragment>
-                <Typography variant="h3" gutterBottom>Add a new Callmap Record</Typography>
+                <Typography variant="h3" gutterBottom>Edit Callmap Record</Typography>
                 <Grid container spacing={3}>
                     <Grid item xs={12} sm={6} lg={2}>
                         <TextField
