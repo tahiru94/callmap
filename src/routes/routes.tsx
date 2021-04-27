@@ -5,6 +5,7 @@ import Add from '@material-ui/icons/Add';
 import DashboardContainer from '../containers/DashboardContainer';
 import NewCallmapRecordContainer from '../containers/NewCallmapRecordContainer';
 import EditCallmapRecordContainer from '../containers/EditCallmapRecordContainer/';
+import ViewCallmapRecordContainer from '../containers/ViewCallmapRecordContainer';
 
 const AppRoutes: IRoute[] = [
     {
@@ -28,7 +29,7 @@ const AppRoutes: IRoute[] = [
     },
     {
         path: '/view/:id',
-        component: () => <div>View Callmap Record</div>,
+        component: ViewCallmapRecordContainer,
         showInSidebar: false
     },
     {

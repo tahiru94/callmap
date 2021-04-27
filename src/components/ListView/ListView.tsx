@@ -24,7 +24,7 @@ const ListView: FC = (props: any) => {
         const output = props.children.map((item: string) => {
             return (
                 <ListItem key={item}>
-                    <ListItemText primary={item} />
+                    <ListItemText color={item === 'No Additional Notes' ? 'textSecondary' : 'textPrimary'} primary={item} />
                 </ListItem>
             );
         });
