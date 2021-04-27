@@ -36,7 +36,7 @@ const AppRoutes: IRoute[] = [
         path: '/all',
         sidebarName: 'Historic View',
         component: () => <div>Historic View</div>,
-        showInSidebar: true
+        showInSidebar: false,
     },
 ];
 

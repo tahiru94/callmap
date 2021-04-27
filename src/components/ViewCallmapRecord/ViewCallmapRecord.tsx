@@ -8,6 +8,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import ListView from '../ListView/ListView';
 import { ICallmapRecord } from '../../models/callmap-record';
+import { formatDate, formatPhoneNumber } from '../../utils';
 
 interface IOwnProps {
     callmapRecord: ICallmapRecord;
@@ -30,11 +31,11 @@ const ViewCallmapRecord: FC<IOwnProps> = (props: any): JSX.Element => {
             <Grid container spacing={3} style={{ paddingTop: '16px' }}>
                 <Grid item xs={12} sm={6} lg={6}>
                     <Typography variant="h5" color="primary">Created at</Typography>
-                    <Typography variant="body1">{new Date(callmapRecord.timestamp).toLocaleString()}</Typography>
+                    <Typography variant="body1">{formatDate(callmapRecord.timestamp)}</Typography>
                 </Grid>
                 <Grid item xs={12} sm={6} lg={6}>
                     <Typography variant="h5" color="primary">Last Update</Typography>
-                    <Typography variant="body1">{new Date(callmapRecord.version).toLocaleString()}</Typography>
+                    <Typography variant="body1">{formatDate(callmapRecord.version)}</Typography>
                 </Grid>
                 <Grid item xs={12} sm={6} lg={6}>
                     <Typography variant="h5" color="primary">First name</Typography>
@@ -46,7 +47,7 @@ const ViewCallmapRecord: FC<IOwnProps> = (props: any): JSX.Element => {
                 </Grid>
                 <Grid item xs={12} sm={6} lg={6}>
                     <Typography variant="h5" color="primary">Phone Number</Typography>
-                    <Typography variant="body1">{callmapRecord.phoneNumber || ''}</Typography>
+                    <Typography variant="body1">{formatPhoneNumber(callmapRecord.phoneNumber || '')}</Typography>
                 </Grid>
                 <Grid item xs={12} sm={6} lg={6}>
                     <Typography variant="h5" color="primary">Call Note</Typography>
