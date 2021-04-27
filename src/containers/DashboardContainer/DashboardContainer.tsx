@@ -6,6 +6,7 @@ import Dashboard from '../../components/Dashboard';
 import FilterPanel from '../../components/FilterPanel';
 import { ICallmapRecordResponse, ICallmapRecord } from '../../models/callmap-record';
 import { CALLMAP_API_GET_LATEST_URL } from '../../constants/constants';
+import { formatDate, formatPhoneNumber } from '../../utils';
 
 interface IOwnState {
     callmapRecords: ICallmapRecordResponse[];
@@ -46,11 +47,11 @@ class DashboardContainer extends Component<{}, IOwnState> {
                 id: record.id,
                 firstName: record.firstName,
                 lastName: record.lastName,
-                phoneNumber: record.phoneNumber,
+                phoneNumber: formatPhoneNumber(record.phoneNumber),
                 callNote: record.callNote,
                 priority: record.priority,
-                timestamp: new Date(record.timestamp).toLocaleString(),
-                version: new Date(record.version).toLocaleString(),
+                timestamp: formatDate(record.timestamp),
+                version: formatDate(record.version),
                 additionalNotes: record.additionalNotes
             };
             output.push(mappedRecord);
