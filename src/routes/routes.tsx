@@ -1,10 +1,14 @@
 import { IRoute } from '../models/route';
+import Home from '@material-ui/icons/Home';
+
+import DashboardContainer from '../containers/DashboardContainer';
 
 const AppRoutes: IRoute[] = [
     {
         path: '/',
         sidebarName: 'Dashboard',
-        component: () => <div>Home</div>,
+        icon: Home,
+        component: DashboardContainer,
         showInSidebar: true,
     },
     {
