@@ -1,7 +1,9 @@
 import { IRoute } from '../models/route';
 import Home from '@material-ui/icons/Home';
+import Add from '@material-ui/icons/Add';
 
 import DashboardContainer from '../containers/DashboardContainer';
+import NewCallmapRecordContainer from '../containers/NewCallmapRecordContainer';
 
 const AppRoutes: IRoute[] = [
     {
@@ -14,7 +16,8 @@ const AppRoutes: IRoute[] = [
     {
         path: '/new',
         sidebarName: 'Add Callmap Record',
-        component: () => <div>Add Callmap Record</div>,
+        icon: Add,
+        component: NewCallmapRecordContainer,
         showInSidebar: true,
     },
     {

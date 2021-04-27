@@ -1,5 +1,5 @@
 export interface ICallmapRecord {
-    id: string;
+    id?: string;
     firstName: string;
     lastName: string;
     phoneNumber: string;
