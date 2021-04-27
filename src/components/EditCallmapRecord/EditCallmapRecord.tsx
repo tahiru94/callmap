@@ -135,7 +135,7 @@ const NewCallmapRecord: FC<IOwnProps> = (props): JSX.Element => {
                                                 <ListView>
                                                     {[...originalCallmapRecord.additionalNotes!, ...newCallmapRecord.additionalNotes!]}
                                                 </ListView> :
-                                                ''
+                                                <ListView>{['No Additional Notes']}</ListView>
                                         }
                                     </div>
                                 </div>

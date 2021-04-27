@@ -131,7 +131,7 @@ const NewCallmapRecord: FC<IOwnProps> = (props): JSX.Element => {
                                         {
                                             newCallmapRecord.additionalNotes!.length ?
                                                 <ListView>{newCallmapRecord.additionalNotes}</ListView> :
-                                                ''
+                                                <ListView>{['No Additional Notes']}</ListView>
                                         }
                                     </div>
                                 </div>
