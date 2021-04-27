@@ -6,6 +6,7 @@ import DashboardContainer from '../containers/DashboardContainer';
 import NewCallmapRecordContainer from '../containers/NewCallmapRecordContainer';
 import EditCallmapRecordContainer from '../containers/EditCallmapRecordContainer/';
 import ViewCallmapRecordContainer from '../containers/ViewCallmapRecordContainer';
+import HistoricViewContainer from '../containers/HistoricViewContainer';
 
 const AppRoutes: IRoute[] = [
     {
@@ -35,7 +36,7 @@ const AppRoutes: IRoute[] = [
     {
         path: '/all',
         sidebarName: 'Historic View',
-        component: () => <div>Historic View</div>,
+        component: HistoricViewContainer,
         showInSidebar: true
     },
 ];
