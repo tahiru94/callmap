@@ -18,7 +18,7 @@ const editRow = (id: string) => {
 }
 
 const deleteRow = (id: string) => {
-    axios.delete(`${CALLMAP_API_OPERATION_BY_ID_URL}/id/${id}`)
+    axios.delete(`${CALLMAP_API_OPERATION_BY_ID_URL}/${id}`)
         .then((_) => {
             window.location.reload(); // Trigger reload and poll for data
         }).catch((_) => { });

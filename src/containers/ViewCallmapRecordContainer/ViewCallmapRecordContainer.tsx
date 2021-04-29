@@ -50,6 +50,8 @@ class ViewCallmapRecordContainer extends Component<{}, IOwnState> {
     transformCallmapRecordResponse = (callmapRecord: ICallmapRecordResponse): ICallmapRecord => {
         const mappedRecord: ICallmapRecord = {
             id: callmapRecord.id,
+            timestamp: callmapRecord.timestamp,
+            version: callmapRecord.version,
             firstName: callmapRecord.firstName,
             lastName: callmapRecord.lastName,
             phoneNumber: callmapRecord.phoneNumber,

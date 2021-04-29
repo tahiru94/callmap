@@ -28,6 +28,13 @@ class NewCallmapRecordContainer extends Component<{}, IOwnState> {
 
     onTextFieldChange = (event: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = (event as any).currentTarget;
+
+        if (name === 'additionalNote') {
+            this.setState((prevState) => ({
+                ...prevState,
+                additionalNote: value
+            }));
+        }
         this.setState((prevState) => ({
             ...prevState,
             newCallmapRecord: {

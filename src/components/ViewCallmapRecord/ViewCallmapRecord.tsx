@@ -16,6 +16,7 @@ interface IOwnProps {
 
 const ViewCallmapRecord: FC<IOwnProps> = (props: any): JSX.Element => {
     const { callmapRecord } = props;
+    console.log('callmapRecord', callmapRecord);
     return (
         <Fragment>
             <Grid container spacing={3}>
@@ -55,7 +56,7 @@ const ViewCallmapRecord: FC<IOwnProps> = (props: any): JSX.Element => {
                 </Grid>
                 <Grid item xs={12} sm={6} lg={6}>
                     <Typography variant="h5" color="primary">Priority</Typography>
-                    <Typography variant="body1">{callmapRecord.callNote || ''}</Typography>
+                    <Typography variant="body1">{callmapRecord.priority || ''}</Typography>
                 </Grid>
             </Grid>
             <Grid container spacing={3} style={{ paddingTop: '32px' }}>
