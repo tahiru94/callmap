@@ -16,7 +16,6 @@ interface IOwnProps {
 
 const ViewCallmapRecord: FC<IOwnProps> = (props: any): JSX.Element => {
     const { callmapRecord } = props;
-    console.log('callmapRecord', callmapRecord);
     return (
         <Fragment>
             <Grid container spacing={3}>
